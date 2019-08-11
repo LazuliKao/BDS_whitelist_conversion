@@ -1,0 +1,2 @@
+# BDS_whitelist_conversion
+Minecraft:Bedrock Server白名单文件转换

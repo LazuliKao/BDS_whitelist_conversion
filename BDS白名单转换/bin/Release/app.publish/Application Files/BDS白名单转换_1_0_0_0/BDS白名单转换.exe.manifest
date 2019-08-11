@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="BDS白名单转换.exe" version="1.0.0.0" publicKeyToken="106a953712fad07e" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="BDS白名单转换" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="BDS白名单转换.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC 清单选项
+             如果想要更改 Windows 用户帐户控制级别，请使用
+             以下节点之一替换 requestedExecutionLevel 节点。n
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            指定 requestedExecutionLevel 元素将禁用文件和注册表虚拟化。
+            如果你的应用程序需要此虚拟化来实现向后兼容性，则删除此
+            元素。
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BDS白名单转换.exe" size="12240">
+      <assemblyIdentity name="BDS白名单转换" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>o/bDn6Q8VnktWJSmbHw6DspPOwMsEMn2/F/TQLN/hqE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="BDS白名单转换.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rl5/qDc7Jz+tB+BIbOv9iMGPlRe6YJwrjmU09dnlPcs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- 设计此应用程序与其一起工作且已针对此应用程序进行测试的
+           Windows 版本的列表。取消评论适当的元素，
+           Windows 将自动选择最兼容的环境。 -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=LITTLEGAO-PC\gaoxi" issuerKeyHash="96eba31b206fdcc23f1dfe53c9a2bc41ebb2d228" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>DUKknB6QfIw6TbiLtg8O5XvTJZK1YbQkPJchd6YaJyQ=</DigestValue></Reference></SignedInfo><SignatureValue>Y38NxvJH+WxkTOJY4EjfCVE1Q53ECb2vRZYfdCqjWogyyeGBhuAbwu/m61onLRqGRecYtG5UQOwbBK82GKDnVWtF5JAYMJOZHGLb+vqkQSOFpOan2I0wBeNmj7wzk9btSzUmJPZrxSksdbTUL3/B1JWOzwJC8D1rUKyVOoY0zP8=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>vrp5t2ddH6QFU5dcCwIgI0sliBaB4POtKDxMRJFejEAspPQTzbKcmGHJ5yRshzWmwDXeFsCqsq1vVwUwf2j578/hxP8T8QM812yadgS/cUqtkCXkjz7UL6VryR+4pUPRYMH0LJYS+AWjKOcItZfgiJensMLYI70uh+2Jq1JS7Mk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="24271aa67721973c24b461b59225d37be50e0fb68bb84d3a8c7c901e9ca4420d" Description="" Url=""><as:assemblyIdentity name="BDS白名单转换.exe" version="1.0.0.0" publicKeyToken="106a953712fad07e" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LITTLEGAO-PC\gaoxi</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>NTEkFoSlcFhc+T2ZRfLC0lw6/z+IgujwbSmqKqVwYog=</DigestValue></Reference></SignedInfo><SignatureValue>Z31xyi7bav2KOl69l+7bKPMbc2LMM0TE2M1T3N9rjP2Rg4ugsotH0crhcnkIt5ZzZuw4xxJqDtde3A7Cx/HIBDt63rGWyMZbZSnYD4VkMo3IRdOtLp6HJB9mWx1TU7nzwNG1sGrWBEE7cYFKAVTLXnbc0reoab2vpW1hakiqu74=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>vrp5t2ddH6QFU5dcCwIgI0sliBaB4POtKDxMRJFejEAspPQTzbKcmGHJ5yRshzWmwDXeFsCqsq1vVwUwf2j578/hxP8T8QM812yadgS/cUqtkCXkjz7UL6VryR+4pUPRYMH0LJYS+AWjKOcItZfgiJensMLYI70uh+2Jq1JS7Mk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQWL0rMCEFVIlMyU4eFBfDBzANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDHiQATABJAFQAVABMAEUARwBBAE8ALQBQAEMAXABnAGEAbwB4AGkwHhcNMTkwODExMTM1MjQ1WhcNMjAwODEwMTk1MjQ1WjAvMS0wKwYDVQQDHiQATABJAFQAVABMAEUARwBBAE8ALQBQAEMAXABnAGEAbwB4AGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAL66ebdnXR+kBVOXXAsCICNLJYgWgeDzrSg8TESRXoxALKT0E82ynJhhyeckbIc1psA13hbAqrKtb1cFMH9o+e/P4cT/E/EDPNdsmnYEv3FKrZAl5I8+1C+la8kfuKVD0WDB9CyWEvgFoyjnCLWX4IiXp7DC2CO9LoftiatSUuzJAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAh10TwhISuFBynYDSqSIMYZjik6BcZ8SiOLeBHGpNZl3Nychc84rpGp83YCKBjGD5g7NeeZm4GSk3SxGvQuV+86rLA/60yAcXkwVy6nEjjfE+K2gkzT6T1JOKLZJgIitEL11L8Lmb57ZvBtBgd0IueOurBUwQhp+48MKIQcFex20=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

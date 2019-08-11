@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDS白名单转换", "BDS白名单转换\BDS白名单转换.csproj", "{DACE5393-3D9E-4E99-AD92-87B3B040D644}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DACE5393-3D9E-4E99-AD92-87B3B040D644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACE5393-3D9E-4E99-AD92-87B3B040D644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACE5393-3D9E-4E99-AD92-87B3B040D644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACE5393-3D9E-4E99-AD92-87B3B040D644}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {272FB232-FA57-44A3-8624-5BCC61FC03AA}
+	EndGlobalSection
+EndGlobal

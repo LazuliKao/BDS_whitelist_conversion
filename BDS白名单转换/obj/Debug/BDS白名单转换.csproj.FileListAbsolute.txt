@@ -13,3 +13,18 @@ C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转�
 C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转换\obj\Debug\BDS白名单转换.csproj.CoreCompileInputs.cache
 C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转换\obj\Debug\BDS白名单转换.exe
 C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转换\obj\Debug\BDS白名单转换.pdb
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Debug\BDS白名单转换.exe.config
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Debug\BDS白名单转换.exe
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Debug\BDS白名单转换.pdb
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换.csprojAssemblyReference.cache
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\MainWindow.g.cs
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\App.g.cs
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换_MarkupCompile.cache
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换_MarkupCompile.lref
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\MainWindow.baml
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换.g.resources
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换.Properties.Resources.resources
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换.csproj.GenerateResource.cache
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换.csproj.CoreCompileInputs.cache
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换.exe
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Debug\BDS白名单转换.pdb

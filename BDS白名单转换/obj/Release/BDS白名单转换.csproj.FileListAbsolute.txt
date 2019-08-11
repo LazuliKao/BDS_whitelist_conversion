@@ -14,8 +14,6 @@ C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转�
 C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转换\obj\Release\BDS白名单转换.exe
 C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转换\obj\Release\BDS白名单转换.pdb
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.exe.config
-C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.exe.manifest
-C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.application
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.exe
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.pdb
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.csprojAssemblyReference.cache
@@ -28,8 +26,5 @@ C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Rele
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.Properties.Resources.resources
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.csproj.GenerateResource.cache
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.csproj.CoreCompileInputs.cache
-C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.TrustInfo.xml
-C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.exe.manifest
-C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.application
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.exe
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.pdb

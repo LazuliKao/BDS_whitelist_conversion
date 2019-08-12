@@ -16,7 +16,6 @@ C:\Users\gaoxi\OneDrive\build\Visual Studio\BDS白名单转换\BDS白名单转�
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.exe.config
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.exe
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\bin\Release\BDS白名单转换.pdb
-C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.csprojAssemblyReference.cache
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\MainWindow.g.cs
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\App.g.cs
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换_MarkupCompile.cache

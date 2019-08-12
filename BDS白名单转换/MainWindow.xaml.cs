@@ -25,10 +25,12 @@ namespace BDS白名单转换
         {
             #region 建立数组
             TextRange textRange = new TextRange(inputName.Document.ContentStart, inputName.Document.ContentEnd);
-            string[] white_list = textRange.Text.Replace("\r", "").Split('\n');
-            System.Collections.ArrayList al = new System.Collections.ArrayList(white_list);
+            string white_list_all = textRange.Text.Replace("\r", "").Replace("\n", ";").Replace(";;", ";");
+            statistics.AppendText(white_list_all);
+            string[] white_list = white_list_all.Split(';');
+            List<string> al = white_list.ToList();
             al.RemoveAt(white_list.Length - 1);
-            white_list = (string[])al.ToArray(typeof(string));
+            white_list = al.ToArray();
             #endregion
             #region 信息统计
             statistics.Document.Blocks.Clear();
@@ -45,14 +47,55 @@ namespace BDS白名单转换
                 output = output + "  {\n  \"ignoresPlayerLimit\":" + Convert.ToString(ignores_player_limit.IsChecked).ToLower() + ",\n  \"name\":\"" + name.Replace(" ", "#空格") + "\"\n  },\n";
             }
             if ((bool)OneLine.IsChecked)
-            { output = output.Replace("\n", "").Replace(" ", "").Replace("#空格", " "); }
+            {
+                output = output.Replace("\n", "").Replace(" ", "").Replace("#空格", " ");
+                output = output.Substring(0, output.Length - 1) + "]";
+            }
             else
-            {output = output.Substring(0, output.Length - 2).Replace("#空格", " ") + "\n]";}
+            { output = output.Substring(0, output.Length - 2).Replace("#空格", " ") + "\n]"; }
             outputJson.Document.Blocks.Clear();
             outputJson.AppendText(output);
             #endregion
         }
+        private void 提取_Click(object sender, RoutedEventArgs e)
+        {
+            #region 核心代码
+            TextRange textRange = new TextRange(outputJson.Document.ContentStart, outputJson.Document.ContentEnd);
+            string white_list_all = textRange.Text.Replace("\" ", "\"").Replace(" \"", "\"").Replace("\r", "");
+            if (white_list_all != "")
+            {
+                string[] white_list = new string[0];
+                while (true)
+                {
+                    try
+                    {
+                        int p1 = white_list_all.IndexOf("\"name\":\"");
+                        int startIndex = p1 + 8;
+                        int p2 = white_list_all.IndexOf("\"", startIndex);
+                        List<string> al = white_list.ToList();
+                        al.Add(white_list_all.Substring(startIndex, p2 - startIndex));
+                        white_list = al.ToArray();
+                        white_list_all = white_list_all.Substring(p2);
+                        if (p1 < 0 | p2 < startIndex) { break; }
 
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        break;
+                    }
 
+                }
+                statistics.Document.Blocks.Clear();
+                inputName.Document.Blocks.Clear();
+                statistics.AppendText("玩家总计:" + white_list.Length);
+                for (int i = 0; i < white_list.Length; i++)
+                {
+                    statistics.AppendText("\n" + Math.Truncate((decimal)i + 1) + ":" + white_list[i]);
+                    inputName.AppendText(white_list[i]);
+                    inputName.AppendText(Environment.NewLine);
+                }
+            }
+            #endregion
+        }
     }
 }

@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BDS白名单转换"
         mc:Ignorable="d"
-        Title="Minecraft:Bedrock Server白名单转换" Height="399" Width="600">
+        Title="Minecraft:Bedrock Server白名单转换" Height="500" Width="600">
     <Grid>
         <Label Content="统计信息" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="91" FontSize="20" Margin="250,214,0,0" Foreground="#FFBFBFBF" Background="{x:Null}"/>
-        <RichTextBox x:Name="inputName" HorizontalAlignment="Left" Height="304" Margin="10,55,0,0" VerticalAlignment="Top" Width="207" Block.LineHeight="1" AutomationProperties.HelpText="输入玩家ID，一行一个"/>
-        <Button x:Name="转换" Content="&gt;&gt;&gt;转换&gt;&gt;&gt;" HorizontalAlignment="Left" Height="49" Margin="222,310,0,0" VerticalAlignment="Top" Width="149" FontSize="18" Click="转换_Click"/>
-        <Label Content="玩家名（一行一个）" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="207" FontSize="20"/>
-        <Label Content="输出json文本" HorizontalAlignment="Left" Height="40" Margin="376,10,0,0" VerticalAlignment="Top" Width="207" FontSize="20"/>
-        <RichTextBox x:Name="outputJson" HorizontalAlignment="Left" Height="304" Margin="376,55,0,0" VerticalAlignment="Top" Width="207" Block.LineHeight="1" AutomationProperties.HelpText="输出json"/>
-        <RichTextBox x:Name="statistics" HorizontalAlignment="Left" Height="195" Margin="222,55,0,0" VerticalAlignment="Top" Width="149" Block.LineHeight="1" AutomationProperties.HelpText="输入玩家ID，一行一个" Background="{x:Null}">
+        <RichTextBox x:Name="inputName" HorizontalAlignment="Left" Height="406" Margin="10,55,0,0" VerticalAlignment="Top" Width="207" Block.LineHeight="1" AutomationProperties.HelpText="输入玩家ID，一行一个"/>
+        <Button x:Name="转换" Content="&gt;&gt;&gt;转换&gt;&gt;&gt;" HorizontalAlignment="Left" Height="49" Margin="222,412,0,0" VerticalAlignment="Top" Width="149" FontSize="18" Click="转换_Click"/>
+        <Label Content="玩家名（一行一个或&quot;;&quot;间隔）" HorizontalAlignment="Left" Height="40" Margin="2,10,0,0" VerticalAlignment="Top" Width="261" FontSize="20"/>
+        <Label Content="BDS白名单json文本" HorizontalAlignment="Left" Height="40" Margin="376,10,0,0" VerticalAlignment="Top" Width="207" FontSize="20"/>
+        <RichTextBox x:Name="outputJson" HorizontalAlignment="Left" Height="406" Margin="376,55,0,0" VerticalAlignment="Top" Width="207" Block.LineHeight="1" AutomationProperties.HelpText="输出json"/>
+        <RichTextBox x:Name="statistics" HorizontalAlignment="Left" Height="244" Margin="222,109,0,0" VerticalAlignment="Top" Width="149" Block.LineHeight="1" AutomationProperties.HelpText="输入玩家ID，一行一个" Background="{x:Null}">
             <FlowDocument>
                 <Paragraph/>
             </FlowDocument>
         </RichTextBox>
-        <CheckBox x:Name="ignores_player_limit" Content="忽略玩家上限" Height="25" Margin="222,280,0,0" Width="144" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
-        <CheckBox x:Name="OneLine" Content="压缩成一行" Height="25" Margin="222,255,0,0" Width="144" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="ignores_player_limit" Content="忽略玩家上限" Height="25" Margin="224,383,0,0" Width="144" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="OneLine" Content="压缩成一行" Height="25" Margin="224,358,0,0" Width="144" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <Button x:Name="提取" Content="&lt;&lt;&lt;提取&lt;&lt;&lt;" HorizontalAlignment="Left" Height="49" Margin="222,55,0,0" VerticalAlignment="Top" Width="149" FontSize="18" Click="提取_Click"/>
 
     </Grid>
 </Window>

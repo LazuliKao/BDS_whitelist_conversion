@@ -97,5 +97,16 @@ namespace BDS白名单转换
             }
             #endregion
         }
+
+        private void MCBBS_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.mcbbs.net/thread-901503-1-1.html");
+        }
+
+        private void Github_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/littlegao233/BDS_whitelist_conversion/releases");
+
+        }
     }
 }

@@ -27,3 +27,4 @@ C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Rele
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.csproj.CoreCompileInputs.cache
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.exe
 C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.pdb
+C:\Users\gaoxi\source\repos\BDS_whitelist_conversion\BDS白名单转换\obj\Release\BDS白名单转换.csprojAssemblyReference.cache

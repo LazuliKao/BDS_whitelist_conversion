@@ -1,9 +1,4 @@
-﻿
-    
-    
-    
-    
-    <Window
+﻿<Window
         
         
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -13,13 +8,13 @@
         xmlns:local="clr-namespace:BDS白名单转换"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="BDS白名单转换" x:Class="BDS白名单转换.MainWindow"
         mc:Ignorable="d"
-        Title="Minecraft:Bedrock Server白名单转换" Height="522" Width="611">
+        Title="Minecraft:Bedrock Server白名单转换" Height="522" Width="608">
     <Grid>
-        
-        
-        
+
+
+
         <Label Content="统计信息" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="91" FontSize="20" Margin="250,253,0,0" Foreground="#FFBFBFBF" Background="{x:Null}"/>
-        <RichTextBox x:Name="inputName" HorizontalAlignment="Left" Height="400" Margin="10,75,0,-10.333" VerticalAlignment="Top" Width="207" Block.LineHeight="1" AutomationProperties.HelpText="输入玩家ID，一行一个" />
+        <RichTextBox x:Name="inputName" HorizontalAlignment="Left" Height="400" Margin="10,75,0,0" VerticalAlignment="Top" Width="207" Block.LineHeight="1" AutomationProperties.HelpText="输入玩家ID，一行一个" />
         <Label Content="玩家名（一行一个或&quot;;&quot;间隔）" HorizontalAlignment="Left" Height="40" Margin="0,35,0,0" VerticalAlignment="Top" Width="261" FontSize="20"/>
         <Label Content="BDS白名单json文本" HorizontalAlignment="Left" Height="40" Margin="376,35,0,0" VerticalAlignment="Top" Width="207" FontSize="20"/>
         <RichTextBox x:Name="outputJson" HorizontalAlignment="Left" Height="400" Margin="376,75,0,0" VerticalAlignment="Top" Width="207" Block.LineHeight="1" AutomationProperties.HelpText="输出json"/>
@@ -33,11 +28,22 @@
         <Menu HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="604" FontSize="18">
             <MenuItem Header="文件">
                 <MenuItem x:Name="open_whitelist_json" Header="打开whitelist.json" Height="30">
-                    <MenuItem x:Name="open_json" Height="30" Header="选择路径" Click="open_json_Click" />
+                    <MenuItem x:Name="open_json" Height="30" Header="选择路径" Click="Open_json_Click" />
                 </MenuItem>
                 <MenuItem x:Name="open_whitelist_text" Header="打开.txt玩家列表" Height="30">
-                    <MenuItem x:Name="open_txt" Height="30" Header="选择路径" Click="open_text_Click" />
+                    <MenuItem x:Name="open_txt" Height="30" Header="选择路径" Click="Open_text_Click" />
                 </MenuItem>
+
+                <MenuItem x:Name="save_whitelist_json" Header="保存whitelist.json" Height="30" GotFocus="Save_whitelist_json_GotFocus">
+                    <MenuItem x:Name="save_json" Height="30" Header="保存" Click="Save_json_Click" />
+                    <MenuItem x:Name="save_to_json" Height="30" Header="另存为" Click="Save_to_json_Click" />
+                </MenuItem>
+
+                <MenuItem x:Name="save_whitelist_text" Header="保存.txt玩家列表" Height="30" GotFocus="Save_whitelist_text_GotFocus">
+                    <MenuItem x:Name="save_txt" Height="30" Header="保存" Click="Save_txt_Click" />
+                    <MenuItem x:Name="save_to_txt" Height="30" Header="另存为" Click="Save_to_txt_Click" />
+                </MenuItem>
+
             </MenuItem>
             <MenuItem Header="设置" >
                 <CheckBox x:Name="ignores_player_limit" Content="忽略玩家上限" Height="30" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
@@ -45,7 +51,7 @@
             </MenuItem>
             <MenuItem Header="关于" >
                 <MenuItem Header="MCBBS" Height="30" Click="MCBBS_Click"/>
-                <MenuItem Header="Github" Height="30" Click="open_history_path_Click" />
+                <MenuItem Header="Github" Height="30" Click="Github_Click" />
             </MenuItem>
 
         </Menu>

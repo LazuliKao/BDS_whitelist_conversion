@@ -110,7 +110,9 @@ namespace BDS白名单转换
 
         }
 
-        private void open_json_Click(object sender, RoutedEventArgs e)
+        public string[] file_info = { null, null };
+
+        private void Open_json_Click(object sender, RoutedEventArgs e)
         {
             var openJSONFileDialog = new Microsoft.Win32.OpenFileDialog()
             {
@@ -120,17 +122,33 @@ namespace BDS白名单转换
             if (result == true)
             {
                 string File_path = openJSONFileDialog.FileName;
-                open_whitelist_json.Items.Add(new MenuItem() { Header = File_path, Height = 30 });
+                file_info[0] = "json"; file_info[1] = File_path.Substring(0, File_path.LastIndexOf('.'));
+                MenuItem file_path_object = new MenuItem { Header = File_path, Height = 30, Name = "file_history" };
+                file_path_object.Click += new RoutedEventHandler(Open_history_path_json_Click);
+                open_whitelist_json.Items.Add(file_path_object);
                 statistics.Document.Blocks.Clear();
                 inputName.Document.Blocks.Clear();
                 outputJson.Document.Blocks.Clear();
                 outputJson.AppendText(File.ReadAllText(File_path, Encoding.Default));
+                Title = file_info[0] + ">" + File_path;
             }
-
         }
-
-        public delegate void BtnClickHandle(object sender, EventArgs e);
-        private void open_text_Click(object sender, RoutedEventArgs e)
+        private void Open_history_path_json_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string File_path = Convert.ToString(((MenuItem)sender).Header);
+                file_info[0] = "json"; file_info[1] = File_path.Substring(0, File_path.LastIndexOf('.'));
+                statistics.Document.Blocks.Clear();
+                inputName.Document.Blocks.Clear();
+                outputJson.Document.Blocks.Clear();
+                outputJson.AppendText(File.ReadAllText(File_path, Encoding.Default));
+                Title = file_info[0] + ">" + File_path;
+            }
+            catch (Exception a) { MessageBox.Show("ERROR{" + a.Message + "}"); }
+        }
+        
+        private void Open_text_Click(object sender, RoutedEventArgs e)
         {
             var openTXTFileDialog = new Microsoft.Win32.OpenFileDialog()
             {
@@ -140,22 +158,115 @@ namespace BDS白名单转换
             if (result == true)
             {
                 string File_path = openTXTFileDialog.FileName;
-                MenuItem file_path_object = new MenuItem { Header = File_path, Height = 30,Name="file_history" };
-                //file_path_object.Click += new EventHandler(open_history_path_Click);
+                file_info[0] = "txt"; file_info[1] = File_path.Substring(0, File_path.LastIndexOf('.'));
+                MenuItem file_path_object = new MenuItem { Header = File_path, Height = 30, Name = "file_history" };
+                file_path_object.Click += new RoutedEventHandler(Open_history_path_text_Click);
                 open_whitelist_text.Items.Add(file_path_object);
                 statistics.Document.Blocks.Clear();
                 inputName.Document.Blocks.Clear();
                 outputJson.Document.Blocks.Clear();
                 inputName.AppendText(File.ReadAllText(File_path, Encoding.Default));
-              
+                Title = file_info[0] + ">" + File_path;
             }
         }
-        public void open_history_path_Click(object sender, RoutedEventArgs e)
+        private void Open_history_path_text_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                string File_path = Convert.ToString(((MenuItem)sender).Header);
+                file_info[0] = "txt"; file_info[1] = File_path.Substring(0, File_path.LastIndexOf('.'));
+                statistics.Document.Blocks.Clear();
+                inputName.Document.Blocks.Clear();
+                outputJson.Document.Blocks.Clear();
+                inputName.AppendText(File.ReadAllText(File_path, Encoding.Default));
+                Title = file_info[0] + ">" + File_path;
+            }
+            catch (Exception a) { MessageBox.Show("ERROR{" + a.Message + "}"); }
         }
-      
 
+        private void Save_json_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(outputJson.Document.ContentStart, outputJson.Document.ContentEnd);
+            File.WriteAllText(file_info[1] + ".json", textRange.Text);
+            MessageBox.Show($"已保存到{file_info[1]}.json");
+        }
 
-}
+        private void Save_txt_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(inputName.Document.ContentStart, inputName.Document.ContentEnd);
+            File.WriteAllText(file_info[1] + ".txt", textRange.Text);
+            MessageBox.Show($"已保存到{file_info[1]}.txt");
+        }
+        private void Save_to_json_Click(object sender, RoutedEventArgs e)
+        {
+            var SaveJSONFileDialog = new Microsoft.Win32.SaveFileDialog()
+            {
+                Filter = "JSON文件|whitelist.json"
+            };
+            var result = SaveJSONFileDialog.ShowDialog();
+            if (result == true)
+            {
+                string File_path = SaveJSONFileDialog.FileName;
+                file_info[0] = "json"; file_info[1] = File_path.Substring(0, File_path.LastIndexOf('.'));
+                MenuItem file_path_object = new MenuItem { Header = File_path, Height = 30, Name = "file_history" };
+                file_path_object.Click += new RoutedEventHandler(Open_history_path_text_Click);
+                open_whitelist_json.Items.Add(file_path_object);
+                Title = file_info[0] + ">" + File_path;
+                TextRange textRange = new TextRange(outputJson.Document.ContentStart, outputJson.Document.ContentEnd);
+                File.WriteAllText(file_info[1] + ".json", textRange.Text);
+                MessageBox.Show($"已保存到{file_info[1]}.json");
+
+            }
+        }
+
+        private void Save_to_txt_Click(object sender, RoutedEventArgs e)
+        {
+            var SaveJSONFileDialog = new Microsoft.Win32.SaveFileDialog()
+            {
+                Filter = "文本文件|*.txt"
+            };
+            var result = SaveJSONFileDialog.ShowDialog();
+            if (result == true)
+            {
+                string File_path = SaveJSONFileDialog.FileName;
+                file_info[0] = "txt"; file_info[1] = File_path.Substring(0, File_path.LastIndexOf('.'));
+                MenuItem file_path_object = new MenuItem { Header = File_path, Height = 30, Name = "file_history" };
+                file_path_object.Click += new RoutedEventHandler(Open_history_path_text_Click);
+                open_whitelist_text.Items.Add(file_path_object);
+                Title = file_info[0] + ">" + File_path;
+                TextRange textRange = new TextRange(inputName.Document.ContentStart, inputName.Document.ContentEnd);
+                File.WriteAllText(file_info[1] + ".txt", textRange.Text);
+                MessageBox.Show($"已保存到{file_info[1]}.txt");
+            }
+        }
+
+        private void Save_whitelist_json_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (file_info[0] == null || file_info[1] == null)
+            {
+                save_json.Visibility = Visibility.Hidden;
+                save_json.Height = 0;
+            }
+            else
+            {
+                save_json.Visibility = Visibility.Visible;
+                save_json.Height = 30;
+                save_json.Header = $"保存至{file_info[1]}.json";
+            }
+        }
+        private void Save_whitelist_text_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (file_info[0] == null || file_info[1] == null)
+            {
+                save_txt.Visibility = Visibility.Hidden;
+                save_txt.Height = 0;
+            }
+            else
+            {
+                save_txt.Visibility = Visibility.Visible;
+                save_txt.Height = 30;
+                save_txt.Header = $"保存至{file_info[1]}.txt";
+            }
+        }
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,5 +109,53 @@ namespace BDS白名单转换
             System.Diagnostics.Process.Start("https://github.com/littlegao233/BDS_whitelist_conversion/releases");
 
         }
-    }
+
+        private void open_json_Click(object sender, RoutedEventArgs e)
+        {
+            var openJSONFileDialog = new Microsoft.Win32.OpenFileDialog()
+            {
+                Filter = "JSON文件|whitelist.json"
+            };
+            var result = openJSONFileDialog.ShowDialog();
+            if (result == true)
+            {
+                string File_path = openJSONFileDialog.FileName;
+                open_whitelist_json.Items.Add(new MenuItem() { Header = File_path, Height = 30 });
+                statistics.Document.Blocks.Clear();
+                inputName.Document.Blocks.Clear();
+                outputJson.Document.Blocks.Clear();
+                outputJson.AppendText(File.ReadAllText(File_path, Encoding.Default));
+            }
+
+        }
+
+        public delegate void BtnClickHandle(object sender, EventArgs e);
+        private void open_text_Click(object sender, RoutedEventArgs e)
+        {
+            var openTXTFileDialog = new Microsoft.Win32.OpenFileDialog()
+            {
+                Filter = "文本文件|*.txt"
+            };
+            var result = openTXTFileDialog.ShowDialog();
+            if (result == true)
+            {
+                string File_path = openTXTFileDialog.FileName;
+                MenuItem file_path_object = new MenuItem { Header = File_path, Height = 30,Name="file_history" };
+                //file_path_object.Click += new EventHandler(open_history_path_Click);
+                open_whitelist_text.Items.Add(file_path_object);
+                statistics.Document.Blocks.Clear();
+                inputName.Document.Blocks.Clear();
+                outputJson.Document.Blocks.Clear();
+                inputName.AppendText(File.ReadAllText(File_path, Encoding.Default));
+              
+            }
+        }
+        public void open_history_path_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+      
+
+
+}
 }

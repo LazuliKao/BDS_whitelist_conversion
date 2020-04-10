@@ -13,6 +13,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace BDS白名单转换
 {
@@ -22,6 +29,11 @@ namespace BDS白名单转换
         {
             InitializeComponent();
         }
+        private List<string> LinqWhitelistJson(string jsonText)
+        {
+            return JArray.Parse(jsonText).Children()["name"].ToList().ConvertAll(x => x.ToString());
+        }
+
         private void 转换_Click(object sender, RoutedEventArgs e)
         {
             #region 建立数组
@@ -65,31 +77,13 @@ namespace BDS白名单转换
             string white_list_all = textRange.Text.Replace("\" ", "\"").Replace(" \"", "\"").Replace("\r", "");
             if (white_list_all != "")
             {
-                string[] white_list = new string[0];
-                while (true)
-                {
-                    try
-                    {
-                        int p1 = white_list_all.IndexOf("\"name\":\"");
-                        int startIndex = p1 + 8;
-                        int p2 = white_list_all.IndexOf("\"", startIndex);
-                        List<string> al = white_list.ToList();
-                        al.Add(white_list_all.Substring(startIndex, p2 - startIndex));
-                        white_list = al.ToArray();
-                        white_list_all = white_list_all.Substring(p2);
-                        if (p1 < 0 | p2 < startIndex) { break; }
+                List<string> white_list = LinqWhitelistJson(white_list_all);
 
-                    }
-                    catch (ArgumentOutOfRangeException)
-                    {
-                        break;
-                    }
 
-                }
                 statistics.Document.Blocks.Clear();
                 inputName.Document.Blocks.Clear();
-                statistics.AppendText("玩家总计:" + white_list.Length);
-                for (int i = 0; i < white_list.Length; i++)
+                statistics.AppendText("玩家总计:" + white_list.Count);
+                for (int i = 0; i < white_list.Count; i++)
                 {
                     statistics.AppendText("\n" + Math.Truncate((decimal)i + 1) + ":" + white_list[i]);
                     inputName.AppendText(white_list[i]);
@@ -147,7 +141,7 @@ namespace BDS白名单转换
             }
             catch (Exception a) { MessageBox.Show("ERROR{" + a.Message + "}"); }
         }
-        
+
         private void Open_text_Click(object sender, RoutedEventArgs e)
         {
             var openTXTFileDialog = new Microsoft.Win32.OpenFileDialog()
